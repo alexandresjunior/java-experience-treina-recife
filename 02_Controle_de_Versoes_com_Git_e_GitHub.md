@@ -113,41 +113,41 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
    * `git reset --hard <commit>` reverte seu código exatamente como estava após o *commit* especificado. Para especificar o *commit*, use o *hash commit* associado a um *commit* que pode ser encontrado usando `git log` como mostrado acima.
    * `git reset --hard origin/master` reverte seu código para a versão atualmente armazenada online no Github.
 
-## Branching
+## Trabalhando com Branches
 
-After you’ve been working on a project for some time, you may decide that you want to add an additional feature. At the moment, we may just commit changes to this new feature as shown in the graphic below:
+Depois de trabalhar em um projeto por algum tempo, você pode desejar adicionar um recurso adicional. Podemos então *commitar* alterações referentes a esse novo recurso, conforme mostrado no gráfico abaixo:
     </br>
     <div align="center">
       <img src="https://user-images.githubusercontent.com/83607914/185611863-6247da99-e05c-47b4-94fd-9d2fd5119bd2.png" alt="No Branch" width="75%" align="center"/>
     </div>
     </br>
-But this could become problematic if we then discover a bug in our original code, and want to revert back without changing the new feature. This is where branching can become really useful.
-* Branching is a method of moving into a new direction when creating a new feature, and only combining this new feature with the main part of your code, or the main branch, once you’re finished. This workflow will look more like the below graphic:
+Mas isso pode se tornar problemático se descobrirmos um *bug* em nosso código original e quisermos reverter sem alterar o novo recurso. É aqui que o uso de `branches` (ramificações) pode se tornar realmente útil.
+* `Branch` é um método de se mover para uma nova direção ao criar um novo recurso e só combinar esse novo recurso com a parte principal do seu código, ou a ramificação principal (*branch main*), quando terminar. Este fluxo de trabalho será mais parecido com o gráfico abaixo:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/83607914/185612001-9afa3ae7-32e4-4319-b001-647e474ec37b.png" alt="Branch" width="75%" align="center"/>
 </div>
 </br>
 
-* The branch you are currently looking at is determined by the `HEAD`, which points to one of the two branches. By default, the HEAD is pointed at the `master` branch, but we can check out other branches as well.
-* Now, let’s get into how we actually implement branching in our git repositories:
-  1. Run `git branch` to see which branch you’re currently working on, which will have an asterisk to the left of its name.
+* A *branch* que você está olhando no momento é determinada pelo `HEAD`, que aponta para uma das duas *branches*. Por padrão, o `HEAD` é apontado para a *branch main* (ou *master*), mas também podemos fazê-lo apontar para outras *branches* também.
+* Agora, vamos ver como realmente implementamos a *branch* em nossos repositórios git:
+   1. Execute `git branch` para ver em qual *branch* você está trabalhando no momento, que terá um asterisco à esquerda do nome.
     ```
     $ git branch
     * main
     ```
-  2. To make a new branch, we’ll run `git checkout -b <new branch name>`
+  2. Para criar uma nova *branch*, vamos executar `git checkout -b <noma-da-nova-branch>`
     ```
-    $ git checkout -b new_feature
-    Switched to a new branch 'new_feature'
+    $ git checkout -b novo_recurso
+    Switched to a new branch 'novo_recurso'
     ```
     ```
     $ git branch
       main
-    * new_feature
+    * novo_recurso
     ```
-  3. Switch between branches using the command `git checkout <branch name>` and commit any changes to each branch.
-  4. When we’re ready to merge our two branches together, we’ll check out the branch we wish to keep (almost always the master branch) and then run the command `git merge <other branch name>`. This will be treated similarly to a push or pull, and merge conflicts may appear.
+  3. Alterne entre as *branches* usando o comando `git checkout <nome-da-branch>` e confirme as alterações em cada *branch*.
+  4. Quando estivermos prontos para mesclar nossas duas *branches*, executamos o `git checkout` para a *branch* que desejamos manter (quase sempre a *branch main* e então executamos o comando `git merge <nome-da-outra-branch>`. Isso será tratado de forma semelhante a um `push` ou `pull`, e podem aparecer conflitos durante o *merge*.
 
 ## Mais recursos do GitHub
 
