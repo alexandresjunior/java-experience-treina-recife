@@ -1,9 +1,11 @@
 # Controle de Versões com Git and GitHub
 
-## Introducão
+## Introdução
+
 Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no desenvolvimento de aplicações web.
 
 ## Git
+
 * [Git](https://git-scm.com/) é uma ferramenta de linha de comando que nos ajudará no controle de versão de várias maneiras:
   * Permitindo-nos acompanhar as alterações que fazemos em nosso código, salvando *snapshots* de nosso código em um determinado momento.  
     </br>
@@ -22,28 +24,29 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
 * Nas explicações acima, usamos a palavra **repositório**, que ainda não explicamos. Um repositório Git é um local de arquivo onde armazenaremos todos os arquivos relacionados a um determinado projeto. Eles podem ser **remotos** (armazenados *online*) ou **locais** (armazenados em seu computador).
 
 ## GitHub
-* [GitHub](https://www.github.com/) is a website that allows us to store Git repositories remotely on the web.
-* Let’s get started by creating a new repository online:
-  1. Make sure that you have a GitHub account set up. If you don’t have one yet, you can make one [here](https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
-  2. Click the **+** in the top-right corner, and then click “New repository”
-  3. Create a repository name that describes your project
-  4. (Optional) Provide a description for your repository
-  5. Choose whether the repository should be public (visible to anyone on the web) or private (visible just to you and others you specifically grant access)
-  6. (Optional) Decide whether you want to add a README, which is a file describing your new repository.
+
+* [GitHub](https://www.github.com/) é um site que nos permite armazenar repositórios Git remotamente na web.
+* Vamos começar criando um novo repositório online:
+   1. Verifique se você tem uma conta do GitHub configurada. Se você ainda não tem uma, pode criar uma [aqui](https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home).
+   2. Clique no **+** no canto superior direito e clique em "Novo repositório"
+   3. Defina um nome para o repositório que descreva seu projeto
+   4. (Opcional) Forneça uma descrição para seu repositório
+   5. Escolha se o repositório deve ser público (visível para qualquer pessoa na web) ou privado (visível apenas para você e outras pessoas a quem você concede acesso especificamente)
+   6. (Opcional) Decida se deseja adicionar um README, que é um arquivo que descreve seu novo repositório.
     </br>
     <div align="center">
       <img src="https://user-images.githubusercontent.com/83607914/185610289-deb4cdc3-f474-42af-805d-f1d7ca9fe2fa.png" alt="Create New Repository" align="center"/>
     </div>
     </br>
-* Once we have a repository, we’ll probably want to add some files to it. In order to do this, we’ll take our newly created *remote* repository and create a copy, or clone, of it as a *local* repository on our computer.
-  1. Make sure you have git installed on your computer by typing `git` into your terminal. If it is not installed, you can download it [here](https://git-scm.com/downloads).
-  2. Click the green “Clone or Download” button on your repository’s page, and copy the url that pops down. If you didn’t create a README, this link will appear near the top of the page in the “Quick Setup” section.  
+* Com o repositório criado, provavelmente vamos querer adicionar alguns arquivos a ele. Para fazer isso, pegaremos nosso repositório *remoto* recém-criado e criaremos uma cópia, ou "clone", dele como um repositório *local* em nosso computador.
+   1. Certifique-se de ter o git instalado em seu computador digitando `git` no seu terminal. Se não estiver instalado, você pode baixá-lo [aqui](https://git-scm.com/downloads).
+   2. Clique no botão verde “Clone or Download” na página do seu repositório e copie o URL que aparece. Se você não criou um README, este link aparecerá próximo ao topo da página na seção “Configuração Rápida”.  
       </br>
       <div align="center">
         <img src="https://user-images.githubusercontent.com/83607914/185610899-3b2bfa8a-53c4-4f2a-a529-5aedbde52726.png" alt="git clone" width="75%" align="center"/>
       </div>
       </br>
-  3. In your terminal, run `git clone <repository url>`. This will download the repository to your computer. If you didn’t create a README, you will get the warning: `You appear to have cloned into an empty repository`. This is normal, and there’s no need to worry about it.  
+  3. No seu terminal, execute `git clone <repository url>`. Isso fará o download do repositório para o seu computador. Se você não criou um README, você receberá o aviso: `You appear to have cloned into an empty repository`. Isso é normal e não há necessidade de se preocupar com isso.   
       ```
       $ git clone https://github.com/alexandresjunior/git-samples.git
       Cloning into 'git-samples'...
@@ -52,16 +55,17 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
       remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
       Receiving objects: 100% (3/3), done. 
       ```
-  4. Run `ls`, which is a command that lists all files and folders in your current directory. You should see the name of the repository you’ve just cloned.
-  5. Run `cd <repository name>` to change directory into that folder.
-  6. Run `touch <new file name>` to create a new file in that folder. You can now make edits to that file. Alternatively, you can open the folder in your text editor and manually add new files.
-  7. Now, to let Git know that it should be keeping track of the new file you’ve made. Run `git add <new file name>` to track that specific file, or `git add .` to track all files within that directory.
+   4. Execute `ls`, que é um comando que lista todos os arquivos e pastas em seu diretório atual. Você deve ver o nome do repositório que acabou de clonar.
+   5. Execute `cd <nome do repositório>` para mudar o diretório para essa pasta.
+   6. Execute `touch <new file name>` para criar um novo arquivo nessa pasta. Agora você pode fazer edições nesse arquivo. Como alternativa, você pode abrir a pasta em seu editor de texto preferido e adicionar manualmente novos arquivos.
+   7. Agora, para que o Git saiba que ele deve rastrear o novo arquivo que você criou, execute `git add <new file name>` para rastrear esse arquivo específico, ou `git add .` para rastrear todos os arquivos dentro desse diretório.   
       ```
       $ ls
       hello.html  README.md
       ```
 
 ## Commits
+
 * Now, we’ll start to get into what Git can be really useful for. After making some changes to a file, we can *commit* those changes, taking a snapshot of the current state of our code. To do this, we run: `git commit -m "some message"` where the message describes the changes you just made.
 * After this change, we can run `git status` to see how our code compares to the code on the remote repository.
 * When we’re ready to publish our local commits to Github, we can run `git push`. Now, when we go to GitHub in our web browser, our changes will be reflected.
