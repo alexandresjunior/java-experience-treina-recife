@@ -72,10 +72,10 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
 * Se você alterou apenas os arquivos existentes e não criou novos, em vez de usar `git add .` e depois `git commit...`, podemos condensar isso em um comando: `git commit -am "some message" `. Este comando confirmará todas as alterações que você fez.
 * Às vezes, o repositório remoto no GitHub estará mais atualizado do que a versão local. Nesse caso, você deseja primeiro confirmar as alterações e, em seguida, executar o `git pull` para puxar as alterações remotas para o seu repositório.
 
-## Merge Conflicts
+## Resolvendo Conflitos
 
-* One problem that can emerge when working with Git, especially when you’re collaborating with other people, is something called a **merge conflict**. A merge conflict occurs when two people attempt to change a file in ways that conflict with each other.
-* This will typically occur when you either `git push` or `git pull`. When this happens, Git will automatically change the file into a format that clearly outlines what the conflict is. Here’s an example where the same line was added in two different ways:
+* Um problema que pode surgir ao trabalhar com o Git, especialmente quando você está colaborando com outras pessoas, é algo chamado de **conflitos** ao mesclar duas ou mais *branches*. Um conflito ocorre quando duas pessoas tentam alterar um arquivo de maneira conflitante entre si.
+* Isso normalmente ocorrerá quando você executar `git push` ou `git pull`. Quando isso acontecer, o Git mudará automaticamente o arquivo para um formato que descreva claramente qual é o conflito. Aqui está um exemplo em que a mesma linha foi adicionada de duas maneiras diferentes:
   ```
   a = 1
   <<<<< HEAD
@@ -87,8 +87,8 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
   d = 4
   e = 5
   ```
-* In the above example, you added the line `b = 2` and another person wrote `b = 3`, and now we must choose one of those to keep. The long number is a *hash* that represents the commit that is conflicting with your edits. Many text editors will also provide highlighting and simple options such as “accept current” or “accept incoming” that save you the time of deleting the added lines above.
-* Another potentially useful git command is `git log`, which gives you a history of all of your commits on that repository.
+* No exemplo acima, você adicionou a linha `b = 2` e outra pessoa escreveu `b = 3`, e agora devemos escolher uma delas para manter. O número `56782736387980937883` é um *hash* que representa o *commit* que está em conflito com suas edições. Muitos editores de texto também fornecem destaque e opções simples, como “aceitar atual” ou “aceitar mudança”, que economizam o tempo de exclusão das linhas adicionadas acima.
+* Outro comando git potencialmente útil é o `git log`, que fornece um histórico de todos os seus commits nesse repositório.
   ```
   $ git log
   commit e37edec6d3ad39657aadd51284add976ec01797f (HEAD -> main)
@@ -109,11 +109,12 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
 
       Initial commit
   ```
-* Potentially even more helpful, if you realize that you’ve made a mistake, you can revert back to a previous commit using the command `git reset` in one of two ways:
-  * `git reset --hard <commit>` reverts your code to exactly how it was after the specified commit. To specify the commit, use the commit hash associated with a commit which can be found using git log as shown above.
-  * `git reset --hard origin/master` reverts your code to the version currently stored online on Github.
+* Potencialmente ainda mais útil, se você perceber que cometeu um erro, poderá reverter para um *commit* anterior usando o comando `git reset` de duas maneiras:
+   * `git reset --hard <commit>` reverte seu código exatamente como estava após o *commit* especificado. Para especificar o *commit*, use o *hash commit* associado a um *commit* que pode ser encontrado usando `git log` como mostrado acima.
+   * `git reset --hard origin/master` reverte seu código para a versão atualmente armazenada online no Github.
 
 ## Branching
+
 After you’ve been working on a project for some time, you may decide that you want to add an additional feature. At the moment, we may just commit changes to this new feature as shown in the graphic below:
     </br>
     <div align="center">
