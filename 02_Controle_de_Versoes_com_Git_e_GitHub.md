@@ -148,14 +148,15 @@ But this could become problematic if we then discover a bug in our original code
   3. Switch between branches using the command `git checkout <branch name>` and commit any changes to each branch.
   4. When we’re ready to merge our two branches together, we’ll check out the branch we wish to keep (almost always the master branch) and then run the command `git merge <other branch name>`. This will be treated similarly to a push or pull, and merge conflicts may appear.
 
-## More GitHub Features
-There are some useful features specific to GitHub that can help when you’re working on a project:
+## Mais recursos do GitHub
 
-* **Forking**: As a GitHub user, you have the ability to *fork* any repository that you have access to, which creates a copy of the repository that you are the owner of. We do this by clicking the “Fork” button in the top-right.
-* **Pull Requests**: Once you’ve forked a repository and made some changes to your version, you may want to request that those changes be added to the main version of the repository. For example, if you wanted to add a new feature to Bootstrap, you could fork the repository, make some changes, and then submit a pull request. This pull request could then be evaluated and possibly accepted by the people who run the Bootsrap repository. This process of people making a few edits and then requesting that they be merged into a main repository is vital for what is known as *open source software*, or software that created by contributions from a number of developers.
-* **GitHub Pages**: GitHub Pages is a simple way to publish a static site to the web. (We’ll learn later about static vs dynamic sites.) In order to do this:
-  1. Create a new GitHub repository.
-  2. Clone the repository and make changes locally, making sure to include an `index.html` file which will be the landing page for your website.
-  3. Push those changes to GitHub.
-  4. Navigate to the Settings page of your repository, scroll down to GitHub Pages, and choose the master branch in the dropdown menu.
-  5. Scroll back down to the GitHub Pages part of the settings page, and after a few minutes, you should see a notification that “Your site is published at: …” including a URL where you can find your site!
+Existem alguns recursos úteis específicos do GitHub que podem ajudar quando você estiver trabalhando em um projeto:
+
+* **Fork**: como usuário do GitHub, você pode criar um *fork* de qualquer repositório ao qual tenha acesso, o que cria uma cópia do repositório do qual você é proprietário. Fazemos isso clicando no botão “Fork” no canto superior direito.
+* **Pull Requests**: depois de criar uma *branch* em um repositório e fazer algumas alterações nessa *branch*, você pode solicitar que essas alterações sejam adicionadas à *branch* principal (*main*) do repositório. Por exemplo, se você quiser adicionar um novo recurso ao Bootstrap, você pode criar uma *branch* a partir do repositório, fazer algumas alterações e enviar um *pull request*. Esse *pull request* pode ser avaliado e possivelmente aceito pelas pessoas que gerenciam o repositório do Bootsrap. Esse processo de pessoas fazendo algumas edições e depois solicitando que elas sejam mescladas em um repositório principal é vital para o que é conhecido como *software de código aberto* (open-source), ou software criado por contribuições de vários desenvolvedores.
+* **GitHub Pages**: o GitHub Pages é uma maneira simples de publicar um site estático na web. Para fazer isso:
+  1. Crie um novo repositório no GitHub.
+  2. Clone o repositório e faça as alterações localmente, certificando-se de incluir um arquivo `index.html` que será a página inicial do seu site.
+  3. Envie essas alterações para o GitHub.
+  4. Navegue até a página "Configurações" do seu repositório, role para baixo até GitHub Pages e escolha a *branch main* no menu suspenso.
+  5. Role de volta para a parte GitHub Pages da página de configurações e, após alguns minutos, você verá uma notificação de que “Seu site está publicado em: …” incluindo um URL onde você pode encontrar seu site!
