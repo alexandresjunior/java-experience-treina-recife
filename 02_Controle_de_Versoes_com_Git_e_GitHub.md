@@ -66,13 +66,14 @@ Bem-vindxs! Nesta aula, aprenderemos a usar o Git e o GitHub para nos ajudar no 
 
 ## Commits
 
-* Now, we’ll start to get into what Git can be really useful for. After making some changes to a file, we can *commit* those changes, taking a snapshot of the current state of our code. To do this, we run: `git commit -m "some message"` where the message describes the changes you just made.
-* After this change, we can run `git status` to see how our code compares to the code on the remote repository.
-* When we’re ready to publish our local commits to Github, we can run `git push`. Now, when we go to GitHub in our web browser, our changes will be reflected.
-* If you’ve only changed existing files and not created new ones, instead of using `git add .` and then `git commit...`, we can condense this into one command: `git commit -am "some message"`. This command will commit all the changes that you made.
-* Sometimes, the remote repository on GitHub will be more up to date than the local version. In this case, you want to first commit any changes, and then run `git pull` to pull any remote changes to your repository.
+* Agora, vamos começar a entender para que o Git pode ser realmente útil. Depois de fazer algumas alterações em um arquivo, podemos *commitar* essas alterações, tirando um *snpshot* do estado atual do nosso código. Para fazer isso, executamos: `git commit -m "algyma mensagem"` onde a mensagem descreve as alterações que você acabou de fazer.
+* Após essa alteração, podemos executar o `git status` para ver como nosso código se compara ao código no repositório remoto.
+* Quando estivermos prontos para publicar nossos commits locais no Github, podemos executar o `git push`. Agora, quando formos ao GitHub em nosso navegador da web, nossas alterações serão refletidas.
+* Se você alterou apenas os arquivos existentes e não criou novos, em vez de usar `git add .` e depois `git commit...`, podemos condensar isso em um comando: `git commit -am "some message" `. Este comando confirmará todas as alterações que você fez.
+* Às vezes, o repositório remoto no GitHub estará mais atualizado do que a versão local. Nesse caso, você deseja primeiro confirmar as alterações e, em seguida, executar o `git pull` para puxar as alterações remotas para o seu repositório.
 
 ## Merge Conflicts
+
 * One problem that can emerge when working with Git, especially when you’re collaborating with other people, is something called a **merge conflict**. A merge conflict occurs when two people attempt to change a file in ways that conflict with each other.
 * This will typically occur when you either `git push` or `git pull`. When this happens, Git will automatically change the file into a format that clearly outlines what the conflict is. Here’s an example where the same line was added in two different ways:
   ```
