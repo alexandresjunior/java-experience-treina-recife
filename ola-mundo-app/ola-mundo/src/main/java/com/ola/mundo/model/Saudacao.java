@@ -13,6 +13,10 @@ public class Saudacao {
     private int id;
     private String mensagem;
 
+    public Saudacao() {
+        
+    }
+
     public Saudacao(int id, String mensagem) {
         this.id = id;
         this.mensagem = mensagem;
