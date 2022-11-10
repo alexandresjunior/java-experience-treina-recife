@@ -1,13 +1,13 @@
 const Cursos = () => {
     return (
-        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
             <div className="container-fluid py-4">
                 <div className="row">
                     <div className="col-12">
                         <div className="card my-4">
                             <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                                 <div className="bg-gradient-warning shadow-primary border-radius-lg pt-4 pb-3">
-                                    <h6 className="text-white text-capitalize ps-3">Alunos</h6>
+                                    <h6 className="text-white text-capitalize ps-3">Cursos</h6>
                                 </div>
                             </div>
 
@@ -55,10 +55,10 @@ const Cursos = () => {
                                                                 <p className="text-xs font-weight-bold mb-0">R$ {curso.valor}</p>
                                                             </td>
                                                             <td className="col-1 align-middle">
-                                                                <a href="/" className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar usuário">
+                                                                <a href="/" className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar curso">
                                                                     <i className="material-icons opacity-10">edit</i>
                                                                 </a>
-                                                                <a href="/" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Deletar usuário">
+                                                                <a href="/" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Deletar curso">
                                                                     <i className="material-icons opacity-10">delete</i>
                                                                 </a>
                                                             </td>

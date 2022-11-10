@@ -27706,3 +27706,18 @@ pre[class*="language-"] {
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */
+
+/* Estilos Customizados - Treina Recife */
+
+.custom-buttom {
+  background-color: transparent;
+  border: none;
+}
+
+.custom-arrow-icon-up {
+  transform: rotate(180deg);
+}
+
+.custom-arrow-icon-down {
+  transform: rotate(0);
+}

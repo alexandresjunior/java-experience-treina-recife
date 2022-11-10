@@ -1,6 +1,6 @@
 const Alunos = () => {
     return (
-        <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
             <div className="container-fluid py-4">
                 <div className="row">
                     <div className="col-12">
@@ -47,10 +47,10 @@ const Alunos = () => {
                                                                 <p className="text-xs text-secondary mb-0">{aluno.endereco.bairro}, {aluno.endereco.cidade} - {aluno.endereco.estado}</p>
                                                             </td>
                                                             <td className="col-1 align-middle">
-                                                                <a href="/" className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar usuário">
+                                                                <a href="/" className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar aluno">
                                                                     <i className="material-icons opacity-10">edit</i>
                                                                 </a>
-                                                                <a href="/" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Deletar usuário">
+                                                                <a href="/" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Deletar aluno">
                                                                     <i className="material-icons opacity-10">delete</i>
                                                                 </a>
                                                             </td>
@@ -66,7 +66,7 @@ const Alunos = () => {
                     </div>
                 </div>
             </div>
-        </main >
+        </main>
     )
 }
 
