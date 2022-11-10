@@ -86,7 +86,7 @@ const NavBar = () => {
                     </li>
                     <li className="nav-item">
                         <Link className={`nav-link ${handleActiveNavLink("/sign-up")}`} to={`/sign-up`}>
-                            <div className="text-center me-2 d-flex align-items-center justify-content-center">]
+                            <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">assignment</i>
                             </div>
                             <span className="nav-link-text ms-1">Sign Up</span>
