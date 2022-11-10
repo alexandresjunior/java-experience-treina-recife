@@ -1,6 +1,8 @@
+import NavBar from "./components/NavBar";
+
 const App = () => {
   return (
-    <p>Hello, Treina Recife!</p>
+    <NavBar />
   );
 }
 
