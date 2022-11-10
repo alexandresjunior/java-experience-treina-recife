@@ -12,7 +12,6 @@ import SignUp from "./pages/usuario/SignUp";
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
         <Route path="/">
           <Route index element={<Dashboard />} />
