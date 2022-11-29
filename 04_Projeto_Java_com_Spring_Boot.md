@@ -2,8 +2,10 @@
 
 Em duplas, deve-se criar uma aplicação usando o *framework* Java [Spring Boot](https://spring.io/projects/spring-boot), que deverá:
 1. Implementar a relação entre as classes definidas no diagrama abaixo:
-    
-    ![image](https://user-images.githubusercontent.com/83607914/192667741-3e593fb6-54b6-497a-97b3-734c8f989edd.png)
+
+    <div align="center">
+        <img src="https://user-images.githubusercontent.com/83607914/204582927-1b64ef23-d904-4302-80ed-7d6f62c1374f.png" width="75%" />
+    </div>
 
 3. Realizar as operações **CRUD** para as entidades necessárias usando o padrão **REST API**, a fim de que as APIs sejam acessíveis para outros usuários;
 4. Documentar a aplicação em um arquivo **README.md** na raiz do repositório do projeto que deverá ser hospedado no **GitHub**. Este arquivo deverá conter instruções de como configurar o ambiente e executar a aplicação, além de uma descrição dos principais arquivos e funcionalidades.
