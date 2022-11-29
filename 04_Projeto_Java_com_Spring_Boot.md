@@ -4,7 +4,7 @@ Em duplas, deve-se criar uma aplicação usando o *framework* Java [Spring Boot]
 1. Implementar a relação entre as classes definidas no diagrama abaixo:
 
     <div align="center">
-        <img src="https://user-images.githubusercontent.com/83607914/204613923-428f910f-4e60-4de2-a941-a81b11d06af3.png" width="90%" />
+        <img src="https://user-images.githubusercontent.com/83607914/204623535-ebdb4cc3-b166-4d73-9840-ebd835dbd5d6.png" width="90%" />
     </div>
 
 3. Realizar as operações **CRUD** para as entidades necessárias usando o padrão **REST API**, a fim de que as APIs sejam acessíveis para outros usuários;
