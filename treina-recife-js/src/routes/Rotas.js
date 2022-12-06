@@ -8,7 +8,7 @@ import Dashboard from "../pages/Dashboard";
 import Perfil from "../pages/usuario/Perfil";
 import SignIn from "../pages/usuario/SignIn";
 import SignUp from "../pages/usuario/SignUp";
-import Prospects from "../pages/Prospects";
+import Prospects from "../pages/prospects/Prospects";
 import NavBar from "../components/NavBar";
 import ProspectsEditor from "../pages/prospects/ProspectsEditor";
 

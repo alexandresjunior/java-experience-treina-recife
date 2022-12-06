@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchBar from "../../components/SearchBar";
 
 const Prospects = () => {
     return (
@@ -14,6 +15,8 @@ const Prospects = () => {
                                 </div>
                             </div>
 
+                            <SearchBar />
+
                             <div className="card-body px-0 pb-2">
                                 <div className="table-responsive p-0">
                                     <table className="table align-items-center mb-0">
@@ -22,7 +25,8 @@ const Prospects = () => {
                                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nome</th>
                                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Telefone</th>
                                                 <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Data de Cadastro</th>
-                                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Detalhes</th>
+                                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                                                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Novo Contato</th>
                                                 <th className="text-secondary opacity-7"></th>
                                             </tr>
                                         </thead>
@@ -34,28 +38,28 @@ const Prospects = () => {
                                                             <td className="col-3">
                                                                 <div className="d-flex px-2 py-1">
                                                                     <div className="d-flex flex-column justify-content-center ps-2">
-                                                                        <h6 className="mb-0 text-sm">{prospect.nome}</h6>
+                                                                        <Link to={`/prospects/${prospect.id}`} className="text-secondary"><h6 className="mb-0 text-sm">{prospect.nome}</h6></Link>
                                                                         <p className="text-xs text-secondary mb-0">{prospect.email}</p>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                             <td className="col-2">
-                                                                <p className="text-xs font-weight-bold mb-0">{prospect.telefone}</p>
+                                                                <p className="text-xs text-secondary mb-0">{prospect.telefone}</p>
                                                             </td>
                                                             <td className="col-2">
-                                                                <p className="text-xs font-weight-bold mb-0">{prospect.dataCadastro}</p>
+                                                                <p className="text-xs text-secondary mb-0">{prospect.dataCadastro}</p>
                                                             </td>
-                                                            <td className="col-3">
+                                                            <td className="col-2">
                                                                 <p className="text-xs font-weight-bold mb-0">{prospect.status}</p>
-                                                                <p className="text-xs text-secondary mb-0">{prospect.dataNovoContato} - {prospect.observacao}</p>
+                                                            </td>
+                                                            <td className="col-2">
+                                                                <p className="text-xs text-secondary mb-0">{prospect.dataNovoContato}</p>
                                                             </td>
                                                             <td className="col-1 align-middle">
-                                                                <Link to={`/prospects/${prospect.id}`} className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar aluno">
-                                                                    <i className="material-icons opacity-10">edit</i>
+                                                                <Link to={`/prospects/${prospect.id}`} className="text-secondary font-weight-bold text-xs pe-3 btn-tooltip"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver detalhes">
+                                                                    <i className="material-icons opacity-10">read_more</i>
                                                                 </Link>
-                                                                <a href="/" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Deletar aluno">
-                                                                    <i className="material-icons opacity-10">delete</i>
-                                                                </a>
                                                             </td>
                                                         </tr>
                                                     )
