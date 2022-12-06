@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
@@ -9,7 +10,7 @@ const SignUp = () => {
                         <div className="row">
                             <div className="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
                                 <div className="position-relative bg-gradient-secondary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center">
-                                    <img src={require("../../assets/img/treina_recife_logo_miniatura.png")} alt="Treina Recife Logo"/>
+                                    <img src={require("../../assets/img/treina_recife_logo_miniatura.png")} alt="Treina Recife Logo" />
                                 </div>
                             </div>
                             <div className="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">

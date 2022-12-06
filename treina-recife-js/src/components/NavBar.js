@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 const NavBar = () => {
     let location = useLocation();
 
-    const handleActiveNavLink = (path) => {
+    const isActiveNavLink = (path) => {
         if (location.pathname === path) {
             return "text-white active bg-gradient-warning";
         }
@@ -25,7 +25,7 @@ const NavBar = () => {
             <div className="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/")}`} to={`/`}>
+                        <Link className={`nav-link ${isActiveNavLink("/")}`} to={`/`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">dashboard</i>
                             </div>
@@ -33,7 +33,15 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/turmas")}`} to={`/turmas`}>
+                        <Link className={`nav-link ${isActiveNavLink("/prospects")}`} to={`/prospects`}>
+                            <div className="text-center me-2 d-flex align-items-center justify-content-center">
+                                <i className="material-icons opacity-10">contact_phone</i>
+                            </div>
+                            <span className="nav-link-text ms-1">Prospects</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className={`nav-link ${isActiveNavLink("/turmas")}`} to={`/turmas`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">table_view</i>
                             </div>
@@ -41,7 +49,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/alunos")}`} to={`/alunos`}>
+                        <Link className={`nav-link ${isActiveNavLink("/alunos")}`} to={`/alunos`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">groups</i>
                             </div>
@@ -49,7 +57,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/cursos")}`} to={`/cursos`}>
+                        <Link className={`nav-link ${isActiveNavLink("/cursos")}`} to={`/cursos`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">devices</i>
                             </div>
@@ -57,7 +65,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/professores")}`} to={`/professores`}>
+                        <Link className={`nav-link ${isActiveNavLink("/professores")}`} to={`/professores`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">school</i>
                             </div>
@@ -69,7 +77,7 @@ const NavBar = () => {
                         <h6 className="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-8">Dados do Usuário</h6>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/perfil")}`} to={`/perfil`}>
+                        <Link className={`nav-link ${isActiveNavLink("/perfil")}`} to={`/perfil`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">person</i>
                             </div>
@@ -77,7 +85,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/sign-in")}`} to={`/sign-in`}>
+                        <Link className={`nav-link ${isActiveNavLink("/sign-in")}`} to={`/sign-in`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">login</i>
                             </div>
@@ -85,7 +93,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${handleActiveNavLink("/sign-up")}`} to={`/sign-up`}>
+                        <Link className={`nav-link ${isActiveNavLink("/sign-up")}`} to={`/sign-up`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">assignment</i>
                             </div>
