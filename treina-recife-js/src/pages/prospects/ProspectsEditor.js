@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useProspect } from "../../hooks/useProspect";
 
-const ProspectsEditor = () => {
-    const [editavel, setEditavel] = useState(false);
+const ProspectsEditor = ({ novo }) => {
+    const [editavel, setEditavel] = useState(novo ? true : false);
+
+    const { id } = useParams();
+    const [prospect, setProspect] = useProspect(id);
 
     const handleClickOnEditar = () => {
         setEditavel(true)
@@ -10,6 +14,7 @@ const ProspectsEditor = () => {
 
     const handleClickOnSalvar = () => {
         setEditavel(false)
+        setProspect(prospect)
     }
 
     const handleClickOnDeletar = () => {
@@ -83,11 +88,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <input type="text" className="form-control" defaultValue={"Alexandre de Souza Jr."} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <input type="text" className="form-control" defaultValue={prospect.nome} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; Alexandre de Souza Jr.</>
+                                                                <>&nbsp; {prospect.nome}</>
                                                             )
                                                         }
                                                     </li>
@@ -98,11 +103,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <input type="email" className="form-control" defaultValue={"alexandre@treinarecife"} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <input type="email" className="form-control" defaultValue={prospect.email} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; alexandre@treinarecife</>
+                                                                <>&nbsp; {prospect.email}</>
                                                             )
                                                         }
                                                     </li>
@@ -113,11 +118,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <input type="text" className="form-control" defaultValue={"(81) 99160-3025"} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <input type="text" className="form-control" defaultValue={prospect.telefone} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; (81) 99160-3025</>
+                                                                <>&nbsp; {prospect.telefone}</>
                                                             )
                                                         }
                                                     </li>
@@ -128,11 +133,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <input type="date" className="form-control" defaultValue={"2022/01/01"} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <input type="date" className="form-control" defaultValue={prospect.dataCadastro} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; 01/01/2022</>
+                                                                <>&nbsp; {prospect.dataCadastro}</>
                                                             )
                                                         }
                                                     </li>
@@ -143,11 +148,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <input type="text" className="form-control" defaultValue={"Interessado"} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <input type="text" className="form-control" defaultValue={prospect.status} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; Interessado</>
+                                                                <>&nbsp; {prospect.status}</>
                                                             )
                                                         }
                                                     </li>
@@ -158,11 +163,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <input type="date" className="form-control" defaultValue={"01/02/2022"} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <input type="date" className="form-control" defaultValue={prospect.dataNovoContato} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; 01/02/2022</>
+                                                                <>&nbsp; {prospect.dataNovoContato}</>
                                                             )
                                                         }
                                                     </li>
@@ -173,11 +178,11 @@ const ProspectsEditor = () => {
                                                             editavel ? (
                                                                 <>
                                                                     <div className="input-group input-group-outline my-2">
-                                                                        <textarea type="text" className="form-control" defaultValue={"NA"} onChange={(event) => (console.log(event.target.value))} />
+                                                                        <textarea type="text" className="form-control" defaultValue={prospect.observacoes} onChange={(event) => (console.log(event.target.value))} />
                                                                     </div>
                                                                 </>
                                                             ) : (
-                                                                <>&nbsp; NA</>
+                                                                <>&nbsp; {prospect.observacoes}</>
                                                             )
                                                         }
                                                     </li>

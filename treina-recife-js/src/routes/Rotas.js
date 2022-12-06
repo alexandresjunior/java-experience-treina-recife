@@ -21,6 +21,7 @@ const Rotas = () => {
                     <Route index element={<Dashboard />} />
                     <Route path="/prospects">
                         <Route index element={<Prospects />} />
+                        <Route path="/prospects/novo" element={<ProspectsEditor novo={true} />} />
                         <Route path="/prospects/:id" element={<ProspectsEditor />} />
                     </Route>
                     <Route path="turmas" element={<Turmas />} />

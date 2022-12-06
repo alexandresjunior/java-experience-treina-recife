@@ -21,7 +21,9 @@ const Prospects = () => {
                                         <SearchBar />
                                     </div>
                                     <div className="col-1 ps-2">
-                                        <button type="button" class="btn btn-warning mt-4 ms-0"><i className="material-icons opacity-10">add_box</i></button>
+                                        <Link to={`/prospects/novo`}>
+                                            <button type="button" className="btn btn-warning mt-4 ms-0"><i className="material-icons opacity-10">add_box</i></button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
