@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Prospects = () => {
     return (
@@ -49,9 +50,9 @@ const Prospects = () => {
                                                                 <p className="text-xs text-secondary mb-0">{prospect.dataNovoContato} - {prospect.observacao}</p>
                                                             </td>
                                                             <td className="col-1 align-middle">
-                                                                <a href="/" className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar aluno">
+                                                                <Link to={`/prospects/${prospect.id}`} className="text-secondary font-weight-bold text-xs pe-3" data-toggle="tooltip" data-original-title="Editar aluno">
                                                                     <i className="material-icons opacity-10">edit</i>
-                                                                </a>
+                                                                </Link>
                                                                 <a href="/" className="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Deletar aluno">
                                                                     <i className="material-icons opacity-10">delete</i>
                                                                 </a>
@@ -76,6 +77,7 @@ export default Prospects;
 
 const prospects = [
     {
+        "id": 1,
         "nome": "Alexandre de Souza Jr.",
         "email": "alexandre@treinarecife.com.br",
         "telefone": "(81) 99160-3025",
@@ -85,6 +87,7 @@ const prospects = [
         "observacao": "NA"
     },
     {
+        "id": 2,
         "nome": "Rebeca Valgueiro",
         "email": "rebeca@treinarecife.com.br",
         "telefone": "(81) 99160-3025",
@@ -94,6 +97,7 @@ const prospects = [
         "observacao": "NA"
     },
     {
+        "id": 3,
         "nome": "Edilene Valgueiro",
         "email": "edilene@treinarecife.com.br",
         "telefone": "(81) 99160-3025",
@@ -103,6 +107,7 @@ const prospects = [
         "observacao": "NA"
     },
     {
+        "id": 4,
         "nome": "Rogério Valgueiro",
         "email": "rogerio@treinarecife.com.br",
         "telefone": "(81) 99160-3025",

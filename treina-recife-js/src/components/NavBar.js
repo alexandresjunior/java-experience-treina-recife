@@ -1,10 +1,21 @@
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
-    let location = useLocation();
+    const location = useLocation();
 
     const isActiveNavLink = (path) => {
+        /* Check if it's the dashboard page */
+
         if (location.pathname === path) {
+            return "text-white active bg-gradient-warning";
+        }
+
+        /* Check other pages */
+
+        path = path.split("/")
+
+        if (location.pathname.includes(path)) {
             return "text-white active bg-gradient-warning";
         }
 
@@ -33,7 +44,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${isActiveNavLink("/prospects")}`} to={`/prospects`}>
+                        <Link className={`nav-link ${isActiveNavLink("prospects")}`} to={`/prospects`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">contact_phone</i>
                             </div>
@@ -41,7 +52,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${isActiveNavLink("/turmas")}`} to={`/turmas`}>
+                        <Link className={`nav-link ${isActiveNavLink("turmas")}`} to={`/turmas`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">table_view</i>
                             </div>
@@ -49,7 +60,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${isActiveNavLink("/alunos")}`} to={`/alunos`}>
+                        <Link className={`nav-link ${isActiveNavLink("alunos")}`} to={`/alunos`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">groups</i>
                             </div>
@@ -57,7 +68,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${isActiveNavLink("/cursos")}`} to={`/cursos`}>
+                        <Link className={`nav-link ${isActiveNavLink("cursos")}`} to={`/cursos`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">devices</i>
                             </div>
@@ -65,7 +76,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link ${isActiveNavLink("/professores")}`} to={`/professores`}>
+                        <Link className={`nav-link ${isActiveNavLink("professores")}`} to={`/professores`}>
                             <div className="text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">school</i>
                             </div>
