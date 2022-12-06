@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "../components/SearchBar";
+import { professores } from "../mocks";
 
 const Professores = () => {
     return (
@@ -80,18 +81,3 @@ const Professores = () => {
 }
 
 export default Professores;
-
-const professores = [
-    {
-        "nome": "Alexandre de Souza Jr.",
-        "email": "alexandre@treinarecife.com.br",
-        "telefone": "(81) 99160-3025",
-        "valor": 60
-    },
-    {
-        "nome": "Rogério Valgueiro",
-        "email": "rogerio@treinarecife.com.br",
-        "telefone": "(81) 99160-3025",
-        "valor": 60
-    }
-]

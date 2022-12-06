@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "../components/SearchBar";
+import { alunos } from "../mocks";
 
 const Alunos = () => {
     return (
@@ -85,62 +86,3 @@ const Alunos = () => {
 }
 
 export default Alunos;
-
-const alunos = [
-    {
-        "nome": "Alexandre de Souza Jr.",
-        "email": "alexandre@treinarecife.com.br",
-        "cpf": "107.403.554-22",
-        "telefone": "(81) 99160-3025",
-        "endereco": {
-            "logradouro": "Rua Dr. João Marques",
-            "numero": 100,
-            "complemento": "apt. 701",
-            "bairro": "Ilha do Retiro",
-            "cidade": "Recife",
-            "estado": "PE"
-        }
-    },
-    {
-        "nome": "Rebeca Valgueiro",
-        "email": "rebeca@treinarecife.com.br",
-        "cpf": "107.403.554-22",
-        "telefone": "(81) 99160-3025",
-        "endereco": {
-            "logradouro": "Rua Dr. João Marques",
-            "numero": 100,
-            "complemento": "apt. 701",
-            "bairro": "Ilha do Retiro",
-            "cidade": "Recife",
-            "estado": "PE"
-        }
-    },
-    {
-        "nome": "Edilene Valgueiro",
-        "email": "edilene@treinarecife.com.br",
-        "cpf": "107.403.554-22",
-        "telefone": "(81) 99160-3025",
-        "endereco": {
-            "logradouro": "Rua Dr. João Marques",
-            "numero": 100,
-            "complemento": "apt. 701",
-            "bairro": "Ilha do Retiro",
-            "cidade": "Recife",
-            "estado": "PE"
-        }
-    },
-    {
-        "nome": "Rogério Valgueiro",
-        "email": "rogerio@treinarecife.com.br",
-        "cpf": "107.403.554-22",
-        "telefone": "(81) 99160-3025",
-        "endereco": {
-            "logradouro": "Rua Dr. João Marques",
-            "numero": 100,
-            "complemento": "apt. 701",
-            "bairro": "Ilha do Retiro",
-            "cidade": "Recife",
-            "estado": "PE"
-        }
-    }
-]

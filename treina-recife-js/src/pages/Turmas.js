@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
+import { turmas } from "../mocks";
 
 const Turmas = () => {
     const [turmaId, setTurmaId] = useState(0);
@@ -132,56 +133,3 @@ const Turmas = () => {
 }
 
 export default Turmas;
-
-const turmas = [
-    {
-        "nome": "Lógica de Programação com Python",
-        "professor": "Rogério Aguiar",
-        "valor": 350,
-        "dias": [
-            "Segunda",
-            "Quarta"
-        ],
-        "status": "Concluída",
-        "alunos": [
-            "Harry Potter",
-            "Hermione Granger",
-            "Ronald Weasley",
-            "Neville Longbottom",
-            "Gina Weasley"
-        ]
-    },
-    {
-        "nome": "Java com Spring Boot",
-        "professor": "Rodrigo Melo",
-        "valor": 750,
-        "dias": [
-            "Sábado"
-        ],
-        "status": "Em Andamento",
-        "alunos": [
-            "Harry Potter",
-            "Ronald Weasley",
-            "Draco Malfoy",
-            "Luna Lovegood",
-            "Gina Weasley"
-        ]
-    },
-    {
-        "nome": "Java com Spring Boot",
-        "professor": "Alexandre de Souza Jr.",
-        "valor": 750,
-        "dias": [
-            "Terça",
-            "Quinta"
-        ],
-        "status": "Aberta",
-        "alunos": [
-            "Hermione Granger",
-            "Draco Malfoy",
-            "Luna Lovegood",
-            "Neville Longbottom",
-            "Gina Weasley"
-        ]
-    }
-]

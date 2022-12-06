@@ -1,5 +1,6 @@
 import React from "react"
 import SearchBar from "../components/SearchBar"
+import { cursos } from "../mocks"
 
 const Cursos = () => {
     return (
@@ -93,46 +94,3 @@ const Cursos = () => {
 }
 
 export default Cursos;
-
-const cursos = [
-    {
-        "nome": "Lógica de Programação com Python",
-        "chtotal": 30,
-        "turno": "Noite",
-        "valor": 350.00,
-        "dias": [
-            "Segunda",
-            "Quarta"
-        ]
-    },
-    {
-        "nome": "Java com Spring Boot",
-        "chtotal": 36,
-        "turno": "Noite",
-        "valor": 750.00,
-        "dias": [
-            "Segunda",
-            "Quarta",
-            "Sexta"
-        ]
-    },
-    {
-        "nome": "Java Experience",
-        "chtotal": 42,
-        "turno": "Noite",
-        "valor": 750.00,
-        "dias": [
-            "Terça",
-            "Quinta"
-        ]
-    },
-    {
-        "nome": "Banco de Dados SQL",
-        "chtotal": 24,
-        "turno": "Manhã",
-        "valor": 300.00,
-        "dias": [
-            "Sábado"
-        ]
-    }
-]

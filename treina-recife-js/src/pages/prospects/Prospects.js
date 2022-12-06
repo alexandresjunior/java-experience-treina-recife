@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/SearchBar";
+import { prospects } from "../../mocks";
 
 const Prospects = () => {
     return (
@@ -89,46 +90,3 @@ const Prospects = () => {
 }
 
 export default Prospects;
-
-const prospects = [
-    {
-        "id": 1,
-        "nome": "Alexandre de Souza Jr.",
-        "email": "alexandre@treinarecife.com.br",
-        "telefone": "(81) 99160-3025",
-        "dataCadastro": "01/01/2022",
-        "status": "Interessado",
-        "dataNovoContato": "01/01/2023",
-        "observacao": "NA"
-    },
-    {
-        "id": 2,
-        "nome": "Rebeca Valgueiro",
-        "email": "rebeca@treinarecife.com.br",
-        "telefone": "(81) 99160-3025",
-        "dataCadastro": "01/01/2022",
-        "status": "Interessado",
-        "dataNovoContato": "01/01/2023",
-        "observacao": "NA"
-    },
-    {
-        "id": 3,
-        "nome": "Edilene Valgueiro",
-        "email": "edilene@treinarecife.com.br",
-        "telefone": "(81) 99160-3025",
-        "dataCadastro": "01/01/2022",
-        "status": "Interessado",
-        "dataNovoContato": "01/01/2023",
-        "observacao": "NA"
-    },
-    {
-        "id": 4,
-        "nome": "Rogério Valgueiro",
-        "email": "rogerio@treinarecife.com.br",
-        "telefone": "(81) 99160-3025",
-        "dataCadastro": "01/01/2022",
-        "status": "Interessado",
-        "dataNovoContato": "01/01/2023",
-        "observacao": "NA"
-    }
-]
