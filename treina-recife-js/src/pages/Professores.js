@@ -14,7 +14,16 @@ const Professores = () => {
                                 </div>
                             </div>
 
-                            <SearchBar />
+                            <div className="ms-3 me-4">
+                                <div className="row">
+                                    <div className="col-11 pe-2">
+                                        <SearchBar />
+                                    </div>
+                                    <div className="col-1 ps-2">
+                                        <button type="button" class="btn btn-warning mt-4 ms-0"><i className="material-icons opacity-10">add_box</i></button>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div className="card-body px-0 pb-2">
                                 <div className="table-responsive p-0">

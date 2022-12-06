@@ -2,7 +2,7 @@ import React from "react";
 
 const SearchBar = () => {
     return (
-        <div className="px-3 d-flex align-items-center mt-4">
+        <div className="d-flex align-items-center mt-4">
             <div className="input-group input-group-outline">
                 <label className="form-label">Buscar...</label>
                 <input type="text" className="form-control" />
