@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "../components/SearchBar";
 
 const Alunos = () => {
     return (
@@ -12,6 +13,8 @@ const Alunos = () => {
                                     <h6 className="text-white text-capitalize ps-3">Alunos</h6>
                                 </div>
                             </div>
+
+                            <SearchBar />
 
                             <div className="card-body px-0 pb-2">
                                 <div className="table-responsive p-0">

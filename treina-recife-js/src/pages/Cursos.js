@@ -1,4 +1,5 @@
 import React from "react"
+import SearchBar from "../components/SearchBar"
 
 const Cursos = () => {
     return (
@@ -12,6 +13,8 @@ const Cursos = () => {
                                     <h6 className="text-white text-capitalize ps-3">Cursos</h6>
                                 </div>
                             </div>
+
+                            <SearchBar />
 
                             <div className="card-body px-0 pb-2">
                                 <div className="table-responsive p-0">
@@ -48,7 +51,7 @@ const Cursos = () => {
                                                                 {
                                                                     curso.dias.map((dia, index) => {
                                                                         return (
-                                                                            <span class="badge badge-sm bg-gradient-secondary m-1" key={index}>{dia}</span>
+                                                                            <span className="badge badge-sm bg-gradient-secondary m-1" key={index}>{dia}</span>
                                                                         )
                                                                     })
                                                                 }

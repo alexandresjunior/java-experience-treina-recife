@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SearchBar from "../components/SearchBar";
 
 const Turmas = () => {
     const [turmaId, setTurmaId] = useState(0);
@@ -29,6 +30,8 @@ const Turmas = () => {
                                 </div>
                             </div>
 
+                            <SearchBar />
+
                             <div className="card-body px-0 pb-2">
                                 <div className="table-responsive p-0">
                                     <table className="table align-items-center mb-0">
@@ -43,7 +46,7 @@ const Turmas = () => {
                                         </thead>
                                         <tbody>
                                             {
-                                                turmas.map((turma, index) => {
+                                                turmas?.map((turma, index) => {
                                                     return (
                                                         <>
                                                             <tr key={index}>
@@ -59,7 +62,7 @@ const Turmas = () => {
                                                                 </td>
                                                                 <td className="col-1">
                                                                     {
-                                                                        turma.dias.map((dia, index) => {
+                                                                        turma?.dias?.map((dia, index) => {
                                                                             return (
                                                                                 <span className="badge badge-sm bg-gradient-secondary m-1" key={index}>{dia}</span>
                                                                             )
@@ -88,7 +91,7 @@ const Turmas = () => {
                                                                 (turmaId === index && mostrarAlunos) && (
                                                                     <div className="table-responsive p-5">
                                                                         <table className="table align-items-center mb-0">
-                                                                            {turma.alunos.map((aluno, index) => {
+                                                                            {turma?.alunos?.map((aluno, index) => {
                                                                                 return (
                                                                                     <div key={index} id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                                                         <div className="accordion-body">{aluno}</div>
