@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SearchBar from "../components/SearchBar";
-import { turmas } from "../mocks";
+import SearchBar from "../../components/SearchBar";
+import { turmas } from "../../mocks";
 
 const Turmas = () => {
     const [turmaId, setTurmaId] = useState(0);

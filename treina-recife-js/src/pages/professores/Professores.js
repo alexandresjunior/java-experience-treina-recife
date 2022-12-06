@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBar from "../components/SearchBar";
-import { professores } from "../mocks";
+import SearchBar from "../../components/SearchBar";
+import { professores } from "../../mocks";
 
 const Professores = () => {
     return (
