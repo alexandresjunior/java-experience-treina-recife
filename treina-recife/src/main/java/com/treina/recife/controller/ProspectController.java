@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,15 +20,17 @@ import com.treina.recife.service.ProspectLocalService;
 
 import jakarta.websocket.server.PathParam;
 
-@RestController("/api")
+@RestController
+@RequestMapping(path = "/api")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProspectController {
 
-    @PostMapping("/v1/prospects")
+    @PostMapping(path = "/v1/prospects")
     public @ResponseBody Prospect adicionarProspect(@RequestBody Prospect prospect) {
         return prospectLocalService.adicionarNovoProspect(prospect);
     }
 
-    @GetMapping("/v1/prospects")
+    @GetMapping(path = "/v1/prospects")
     public Page<Prospect> obterProspects(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
@@ -36,17 +40,17 @@ public class ProspectController {
         return prospectLocalService.obterProspects(pageable);
     }
 
-    @GetMapping("/v1/prospects/{id}")
+    @GetMapping(path = "/v1/prospects/{id}")
     public Prospect obterProspectPeloId(@PathParam("id") String id) {
         return prospectLocalService.obterProspectPeloId(Integer.parseInt(id));
     }
 
-    @PutMapping("/v1/prospects/{id}")
+    @PutMapping(path = "/v1/prospects/{id}")
     public Prospect atualizarProspect(@PathParam("id") String id, @RequestBody Prospect prospect) {
         return prospectLocalService.atualizarProspect(Integer.parseInt(id), prospect);
     }
 
-    @DeleteMapping("/v1/prospects/{id}")
+    @DeleteMapping(path = "/v1/prospects/{id}")
     public void deletarProspect(@PathParam("id") String id) {
         prospectLocalService.deletarProspect(Integer.parseInt(id));
     }
