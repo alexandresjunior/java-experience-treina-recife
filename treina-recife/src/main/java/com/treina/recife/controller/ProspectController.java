@@ -1,0 +1,57 @@
+package com.treina.recife.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.treina.recife.model.Prospect;
+import com.treina.recife.service.ProspectLocalService;
+
+import jakarta.websocket.server.PathParam;
+
+@RestController("/api")
+public class ProspectController {
+
+    @PostMapping("/v1/prospects")
+    public @ResponseBody Prospect adicionarProspect(@RequestBody Prospect prospect) {
+        return prospectLocalService.adicionarNovoProspect(prospect);
+    }
+
+    @GetMapping("/v1/prospects")
+    public Page<Prospect> obterProspects(
+            @RequestParam(value = "page", defaultValue = "0") String page,
+            @RequestParam(value = "size", defaultValue = "5") String size) {
+
+        Pageable pageable = PageRequest.of(Integer.parseInt(page), Integer.parseInt(size));
+
+        return prospectLocalService.obterProspects(pageable);
+    }
+
+    @GetMapping("/v1/prospects/{id}")
+    public Prospect obterProspectPeloId(@PathParam("id") String id) {
+        return prospectLocalService.obterProspectPeloId(Integer.parseInt(id));
+    }
+
+    @PutMapping("/v1/prospects/{id}")
+    public Prospect atualizarProspect(@PathParam("id") String id, @RequestBody Prospect prospect) {
+        return prospectLocalService.atualizarProspect(Integer.parseInt(id), prospect);
+    }
+
+    @DeleteMapping("/v1/prospects/{id}")
+    public void deletarProspect(@PathParam("id") String id) {
+        prospectLocalService.deletarProspect(Integer.parseInt(id));
+    }
+
+    @Autowired
+    private ProspectLocalService prospectLocalService;
+
+}
