@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Turmas from "../pages/Turmas";
-import Alunos from "../pages/Alunos";
-import Cursos from "../pages/Cursos";
-import Professores from "../pages/Professores";
+import Turmas from "../pages/turmas/Turmas";
+import Alunos from "../pages/alunos/Alunos";
+import Cursos from "../pages/cursos/Cursos";
+import Professores from "../pages/professores/Professores";
 import Dashboard from "../pages/Dashboard";
 import Perfil from "../pages/usuario/Perfil";
 import SignIn from "../pages/usuario/SignIn";

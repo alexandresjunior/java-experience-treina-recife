@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.treina.recife.model.Prospect;
 import com.treina.recife.service.ProspectLocalService;
-
-import jakarta.websocket.server.PathParam;
 
 @RestController
 @RequestMapping(path = "/api")
@@ -41,17 +40,17 @@ public class ProspectController {
     }
 
     @GetMapping(path = "/v1/prospects/{id}")
-    public Prospect obterProspectPeloId(@PathParam("id") String id) {
+    public Prospect obterProspectPeloId(@PathVariable("id") String id) {
         return prospectLocalService.obterProspectPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/prospects/{id}")
-    public Prospect atualizarProspect(@PathParam("id") String id, @RequestBody Prospect prospect) {
+    public Prospect atualizarProspect(@PathVariable("id") String id, @RequestBody Prospect prospect) {
         return prospectLocalService.atualizarProspect(Integer.parseInt(id), prospect);
     }
 
     @DeleteMapping(path = "/v1/prospects/{id}")
-    public void deletarProspect(@PathParam("id") String id) {
+    public void deletarProspect(@PathVariable("id") String id) {
         prospectLocalService.deletarProspect(Integer.parseInt(id));
     }
 

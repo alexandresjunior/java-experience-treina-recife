@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/SearchBar";
-import { prospects } from "../../mocks";
+import { formatDate } from "../../helper";
+import { obterProspects } from "../../service/ProspectApi";
 
 const Prospects = () => {
+    const [prospects, setProspects] = useState([]);
+
+    useEffect(() => {
+        obterProspects("/v1/prospects", setProspects);
+    }, []);
+
     return (
         <main className="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
             <div className="container-fluid py-4">
@@ -59,13 +66,13 @@ const Prospects = () => {
                                                                 <p className="text-xs text-secondary mb-0">{prospect.telefone}</p>
                                                             </td>
                                                             <td className="col-2">
-                                                                <p className="text-xs text-secondary mb-0">{prospect.dataCadastro}</p>
+                                                                <p className="text-xs text-secondary mb-0">{formatDate(prospect.dataCadastro, "/")}</p>
                                                             </td>
                                                             <td className="col-2">
                                                                 <p className="text-xs font-weight-bold mb-0">{prospect.status}</p>
                                                             </td>
                                                             <td className="col-2">
-                                                                <p className="text-xs text-secondary mb-0">{prospect.dataNovoContato}</p>
+                                                                <p className="text-xs text-secondary mb-0">{formatDate(prospect.dataNovoContato, "/")}</p>
                                                             </td>
                                                             <td className="col-1 align-middle">
                                                                 <Link to={`/prospects/${prospect.id}`} className="text-secondary font-weight-bold text-xs pe-3 btn-tooltip"

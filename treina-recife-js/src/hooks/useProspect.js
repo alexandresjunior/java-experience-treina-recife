@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { prospects } from "../mocks";
+import { obterProspectPeloId } from "../service/ProspectApi";
 
 export const useProspect = (id) => {
     const [prospect, setProspect] = useState(initialState);
 
     useEffect(() => {
-        if (typeof id !== "undefined") {
-            setProspect(prospects[id - 1])
-        }
+        obterProspectPeloId(`/v1/prospects/${id}`, setProspect);
+        console.log(prospect);
     }, [id]);
 
-    return [prospect];
+    return [prospect, setProspect];
 }
 
 const initialState = {
