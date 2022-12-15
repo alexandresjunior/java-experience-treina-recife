@@ -10,4 +10,6 @@ public interface ProspectPersistence extends JpaRepository<Prospect, Integer> {
 
     Page<Prospect> findAll(Pageable pageable);
 
+    Page<Prospect> findByNomeLike(Pageable pageable, String nome);
+
 }

@@ -54,6 +54,17 @@ public class ProspectController {
         prospectLocalService.deletarProspect(Integer.parseInt(id));
     }
 
+    @GetMapping(path = "/v1/prospects/busca/{nome}")
+    public Page<Prospect> obterProspectsPeloNome(
+            @RequestParam(value = "page", defaultValue = "0") String page,
+            @RequestParam(value = "size", defaultValue = "10") String size,
+            @PathVariable("nome") String nome) {
+
+        Pageable pageable = PageRequest.of(Integer.parseInt(page), Integer.parseInt(size));
+
+        return prospectLocalService.buscarPeloNome(pageable, nome);
+    }
+
     @Autowired
     private ProspectLocalService prospectLocalService;
 
