@@ -1,5 +1,7 @@
 package com.treina.recife.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.treina.recife.exception.AlunoNaoEncontradoException;
 import com.treina.recife.model.Aluno;
 import com.treina.recife.service.AlunoLocalService;
 
@@ -41,7 +44,14 @@ public class AlunoController {
 
     @GetMapping(path = "/v1/alunos/{id}")
     public @ResponseBody Aluno obterAlunoPeloId(@PathVariable("id") String id) {
-        return alunoLocalService.obterAlunoPeloId(Integer.parseInt(id));
+        try {
+            return alunoLocalService.obterAlunoPeloId(Integer.parseInt(id));
+        } catch (AlunoNaoEncontradoException e) {
+            _log.error(e.getMessage());
+        }
+
+        // TODO: Retornar mensagem do exception e Status Code (404)
+        return null;
     }
 
     @PutMapping(path = "/v1/alunos/{id}")
@@ -67,5 +77,7 @@ public class AlunoController {
 
     @Autowired
     private AlunoLocalService alunoLocalService;
+
+    private static final Logger _log = LoggerFactory.getLogger(AlunoController.class);
 
 }
