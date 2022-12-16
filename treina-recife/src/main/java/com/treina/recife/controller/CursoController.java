@@ -30,7 +30,7 @@ public class CursoController {
     }
 
     @GetMapping(path = "/v1/cursos")
-    public Page<Curso> obterCursos(
+    public @ResponseBody Page<Curso> obterCursos(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class CursoController {
     }
 
     @GetMapping(path = "/v1/cursos/{id}")
-    public Curso obterCursoPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Curso obterCursoPeloId(@PathVariable("id") String id) {
         return cursoLocalService.obterCursoPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/cursos/{id}")
-    public Curso atualizarCurso(@PathVariable("id") String id, @RequestBody Curso curso) {
+    public @ResponseBody Curso atualizarCurso(@PathVariable("id") String id, @RequestBody Curso curso) {
         return cursoLocalService.atualizarCurso(Integer.parseInt(id), curso);
     }
 
@@ -55,7 +55,7 @@ public class CursoController {
     }
 
     @GetMapping(path = "/v1/cursos/busca/{nome}")
-    public Page<Curso> obterCursosPeloNome(
+    public @ResponseBody Page<Curso> obterCursosPeloNome(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "10") String size,
             @PathVariable("nome") String nome) {

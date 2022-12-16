@@ -30,7 +30,7 @@ public class UsuarioController {
     }
 
     @GetMapping(path = "/v1/usuarios")
-    public Page<Usuario> obterUsuarios(
+    public @ResponseBody Page<Usuario> obterUsuarios(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class UsuarioController {
     }
 
     @GetMapping(path = "/v1/usuarios/{id}")
-    public Usuario obterUsuarioPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Usuario obterUsuarioPeloId(@PathVariable("id") String id) {
         return usuarioLocalService.obterUsuarioPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/usuarios/{id}")
-    public Usuario atualizarUsuario(@PathVariable("id") String id, @RequestBody Usuario usuario) {
+    public @ResponseBody Usuario atualizarUsuario(@PathVariable("id") String id, @RequestBody Usuario usuario) {
         return usuarioLocalService.atualizarUsuario(Integer.parseInt(id), usuario);
     }
 
@@ -55,7 +55,7 @@ public class UsuarioController {
     }
 
     @GetMapping(path = "/v1/usuarios/busca/{nome}")
-    public Page<Usuario> obterUsuariosPeloNome(
+    public @ResponseBody Page<Usuario> obterUsuariosPeloNome(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "10") String size,
             @PathVariable("nome") String nome) {

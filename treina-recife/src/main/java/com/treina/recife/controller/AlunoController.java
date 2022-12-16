@@ -30,7 +30,7 @@ public class AlunoController {
     }
 
     @GetMapping(path = "/v1/alunos")
-    public Page<Aluno> obterAlunos(
+    public @ResponseBody Page<Aluno> obterAlunos(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class AlunoController {
     }
 
     @GetMapping(path = "/v1/alunos/{id}")
-    public Aluno obterAlunoPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Aluno obterAlunoPeloId(@PathVariable("id") String id) {
         return alunoLocalService.obterAlunoPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/alunos/{id}")
-    public Aluno atualizarAluno(@PathVariable("id") String id, @RequestBody Aluno aluno) {
+    public @ResponseBody Aluno atualizarAluno(@PathVariable("id") String id, @RequestBody Aluno aluno) {
         return alunoLocalService.atualizarAluno(Integer.parseInt(id), aluno);
     }
 
@@ -55,7 +55,7 @@ public class AlunoController {
     }
 
     @GetMapping(path = "/v1/alunos/busca/{nome}")
-    public Page<Aluno> obterAlunosPeloNome(
+    public @ResponseBody Page<Aluno> obterAlunosPeloNome(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "10") String size,
             @PathVariable("nome") String nome) {

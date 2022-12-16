@@ -30,7 +30,7 @@ public class SalaController {
     }
 
     @GetMapping(path = "/v1/salas")
-    public Page<Sala> obterSalas(
+    public @ResponseBody Page<Sala> obterSalas(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class SalaController {
     }
 
     @GetMapping(path = "/v1/salas/{id}")
-    public Sala obterSalaPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Sala obterSalaPeloId(@PathVariable("id") String id) {
         return salaLocalService.obterSalaPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/salas/{id}")
-    public Sala atualizarSala(@PathVariable("id") String id, @RequestBody Sala sala) {
+    public @ResponseBody Sala atualizarSala(@PathVariable("id") String id, @RequestBody Sala sala) {
         return salaLocalService.atualizarSala(Integer.parseInt(id), sala);
     }
 

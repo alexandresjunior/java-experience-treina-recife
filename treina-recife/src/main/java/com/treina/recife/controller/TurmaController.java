@@ -30,7 +30,7 @@ public class TurmaController {
     }
 
     @GetMapping(path = "/v1/turmas")
-    public Page<Turma> obterTurmas(
+    public @ResponseBody Page<Turma> obterTurmas(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class TurmaController {
     }
 
     @GetMapping(path = "/v1/turmas/{id}")
-    public Turma obterTurmaPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Turma obterTurmaPeloId(@PathVariable("id") String id) {
         return turmaLocalService.obterTurmaPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/turmas/{id}")
-    public Turma atualizarTurma(@PathVariable("id") String id, @RequestBody Turma turma) {
+    public @ResponseBody Turma atualizarTurma(@PathVariable("id") String id, @RequestBody Turma turma) {
         return turmaLocalService.atualizarTurma(Integer.parseInt(id), turma);
     }
 

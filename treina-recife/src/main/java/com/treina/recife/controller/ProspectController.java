@@ -30,7 +30,7 @@ public class ProspectController {
     }
 
     @GetMapping(path = "/v1/prospects")
-    public Page<Prospect> obterProspects(
+    public @ResponseBody Page<Prospect> obterProspects(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class ProspectController {
     }
 
     @GetMapping(path = "/v1/prospects/{id}")
-    public Prospect obterProspectPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Prospect obterProspectPeloId(@PathVariable("id") String id) {
         return prospectLocalService.obterProspectPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/prospects/{id}")
-    public Prospect atualizarProspect(@PathVariable("id") String id, @RequestBody Prospect prospect) {
+    public @ResponseBody Prospect atualizarProspect(@PathVariable("id") String id, @RequestBody Prospect prospect) {
         return prospectLocalService.atualizarProspect(Integer.parseInt(id), prospect);
     }
 
@@ -55,7 +55,7 @@ public class ProspectController {
     }
 
     @GetMapping(path = "/v1/prospects/busca/{nome}")
-    public Page<Prospect> obterProspectsPeloNome(
+    public @ResponseBody Page<Prospect> obterProspectsPeloNome(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "10") String size,
             @PathVariable("nome") String nome) {

@@ -30,7 +30,7 @@ public class DiaAulaController {
     }
 
     @GetMapping(path = "/v1/diaaulas")
-    public Page<DiaAula> obterDiaAulas(
+    public @ResponseBody Page<DiaAula> obterDiaAulas(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class DiaAulaController {
     }
 
     @GetMapping(path = "/v1/diaaulas/{id}")
-    public DiaAula obterDiaAulaPeloId(@PathVariable("id") String id) {
+    public @ResponseBody DiaAula obterDiaAulaPeloId(@PathVariable("id") String id) {
         return diaAulaLocalService.obterDiaAulaPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/diaaulas/{id}")
-    public DiaAula atualizarDiaAula(@PathVariable("id") String id, @RequestBody DiaAula diaaula) {
+    public @ResponseBody DiaAula atualizarDiaAula(@PathVariable("id") String id, @RequestBody DiaAula diaaula) {
         return diaAulaLocalService.atualizarDiaAula(Integer.parseInt(id), diaaula);
     }
 

@@ -30,7 +30,7 @@ public class ProfessorController {
     }
 
     @GetMapping(path = "/v1/professores")
-    public Page<Professor> obterProfessores(
+    public @ResponseBody Page<Professor> obterProfessores(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class ProfessorController {
     }
 
     @GetMapping(path = "/v1/professores/{id}")
-    public Professor obterProfessorPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Professor obterProfessorPeloId(@PathVariable("id") String id) {
         return professorLocalService.obterProfessorPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/professores/{id}")
-    public Professor atualizarProfessor(@PathVariable("id") String id, @RequestBody Professor professor) {
+    public @ResponseBody Professor atualizarProfessor(@PathVariable("id") String id, @RequestBody Professor professor) {
         return professorLocalService.atualizarProfessor(Integer.parseInt(id), professor);
     }
 
@@ -55,7 +55,7 @@ public class ProfessorController {
     }
 
     @GetMapping(path = "/v1/professores/busca/{nome}")
-    public Page<Professor> obterProfessoresPeloNome(
+    public @ResponseBody Page<Professor> obterProfessoresPeloNome(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "10") String size,
             @PathVariable("nome") String nome) {

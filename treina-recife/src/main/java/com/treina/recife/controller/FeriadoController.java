@@ -30,7 +30,7 @@ public class FeriadoController {
     }
 
     @GetMapping(path = "/v1/feriados")
-    public Page<Feriado> obterFeriados(
+    public @ResponseBody Page<Feriado> obterFeriados(
             @RequestParam(value = "page", defaultValue = "0") String page,
             @RequestParam(value = "size", defaultValue = "5") String size) {
 
@@ -40,12 +40,12 @@ public class FeriadoController {
     }
 
     @GetMapping(path = "/v1/feriados/{id}")
-    public Feriado obterFeriadoPeloId(@PathVariable("id") String id) {
+    public @ResponseBody Feriado obterFeriadoPeloId(@PathVariable("id") String id) {
         return feriadoLocalService.obterFeriadoPeloId(Integer.parseInt(id));
     }
 
     @PutMapping(path = "/v1/feriados/{id}")
-    public Feriado atualizarFeriado(@PathVariable("id") String id, @RequestBody Feriado feriado) {
+    public @ResponseBody Feriado atualizarFeriado(@PathVariable("id") String id, @RequestBody Feriado feriado) {
         return feriadoLocalService.atualizarFeriado(Integer.parseInt(id), feriado);
     }
 
