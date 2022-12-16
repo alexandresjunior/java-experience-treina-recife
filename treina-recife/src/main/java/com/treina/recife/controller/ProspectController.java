@@ -62,7 +62,7 @@ public class ProspectController {
 
         Pageable pageable = PageRequest.of(Integer.parseInt(page), Integer.parseInt(size));
 
-        return prospectLocalService.buscarPeloNome(pageable, nome);
+        return prospectLocalService.buscarProspectPeloNome(pageable, nome);
     }
 
     @Autowired

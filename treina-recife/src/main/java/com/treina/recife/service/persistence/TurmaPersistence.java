@@ -10,6 +10,4 @@ public interface TurmaPersistence extends JpaRepository<Turma, Integer> {
 
     Page<Turma> findAll(Pageable pageable);
 
-    Page<Turma> findByNomeLike(Pageable pageable, String nome);
-
 }

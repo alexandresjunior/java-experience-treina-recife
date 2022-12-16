@@ -40,7 +40,7 @@ public class ProspectLocalService {
         prospectPersistence.deleteById(id);
     }
 
-    public Page<Prospect> buscarPeloNome(Pageable pageable, String nome) {
+    public Page<Prospect> buscarProspectPeloNome(Pageable pageable, String nome) {
         return prospectPersistence.findByNomeLike(pageable, "%" + nome + "%");
     }
 

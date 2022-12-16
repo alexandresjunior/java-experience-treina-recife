@@ -23,6 +23,6 @@ public class Curso {
     private float cargaHorariaTotal;
 
     @Column(nullable = false)
-    private String courseName;
+    private String nome;
 
 }

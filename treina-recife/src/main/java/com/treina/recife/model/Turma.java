@@ -29,13 +29,13 @@ public class Turma {
     @Column(nullable = false)
     private String turno;
 
-    private boolean dom;
     private boolean seg;
     private boolean ter;
     private boolean qua;
     private boolean qui;
     private boolean sex;
     private boolean sab;
+    private boolean dom;
 
     @OneToOne
     private Professor professor;
