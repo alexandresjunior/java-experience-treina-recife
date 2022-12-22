@@ -1,6 +1,16 @@
 package com.treina.recife.controller;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.NoSuchElementException;
+
+import javax.servlet.http.HttpServletResponse;
+import com.lowagie.text.DocumentException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +26,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
+import com.treina.recife.model.Aluno;
 import com.treina.recife.model.Turma;
+import com.treina.recife.service.PdfService;
 import com.treina.recife.service.TurmaLocalService;
 
 @RestController
@@ -54,6 +67,23 @@ public class TurmaController {
         turmaLocalService.deletarTurma(Integer.parseInt(id));
     }
 
+    @GetMapping("v1/gerarAta/{id}")
+    public ResponseEntity<ByteArrayResource> downloadPDFResource(@PathVariable("id") String id, HttpServletResponse response) 
+            throws DocumentException, IOException  {
+        Turma turma = turmaLocalService.obterTurmaPeloId(Integer.valueOf(id));
+
+        response.setContentType("application/pdf");
+        String headerkey = "Content-Disposition";
+        
+        String headervalue = "attachment; filename=ata-" + turma.getCurso().getNome() + ".pdf";
+        response.setHeader(headerkey, headervalue);
+        List<Aluno> listaDeAlunos = turma.getAlunos();
+        PdfService generator = new PdfService();
+        String nomeCurso =  turma.getCurso().getNome();
+        return generator.generate(listaDeAlunos, response, nomeCurso);
+
+    }
+    
     @Autowired
     private TurmaLocalService turmaLocalService;
 
