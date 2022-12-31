@@ -9,13 +9,13 @@ import Perfil from "../pages/usuario/Perfil";
 import SignIn from "../pages/usuario/SignIn";
 import SignUp from "../pages/usuario/SignUp";
 import Prospects from "../pages/prospects/Prospects";
-import NavBar from "../components/NavBar";
 import ProspectsEditor from "../pages/prospects/ProspectsEditor";
+import PortalNavBar from "../components/PortalNavBar";
 
 const Rotas = () => {
     return (
         <BrowserRouter>
-            <NavBar />
+            <PortalNavBar />
             <Routes>
                 <Route path="/">
                     <Route index element={<Dashboard />} />
