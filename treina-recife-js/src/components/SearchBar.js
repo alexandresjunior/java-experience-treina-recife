@@ -1,13 +1,18 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const SearchBar = () => {
     return (
-        <div className="d-flex align-items-center mt-4">
-            <div className="input-group input-group-outline">
-                <label className="form-label">Buscar...</label>
-                <input type="text" className="form-control" />
-            </div>
-        </div>
+        <Form className="d-flex">
+            <Form.Control
+                type="search"
+                placeholder="Digite o nome..."
+                className="me-2"
+                aria-label="Buscar"
+            />
+            <Button variant="orange">Buscar</Button>
+        </Form>
     )
 }
 
